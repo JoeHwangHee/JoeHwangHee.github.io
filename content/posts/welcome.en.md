@@ -6,7 +6,7 @@ title = 'Welcome'
 
 I started my career as a web developer.
 
-These days, with AI advancing at such a striking pace, it's easy to feel a kind of technological anxiety. I came to feel that studying and self-improvement are really the only things I can control, so — a bit late — I decided to start learning again.
+These days, with AI advancing at such a striking pace, I feel a strong sense of technological anxiety. I came to feel that studying and self-improvement are really the only things I can do, so — a bit late — I decided to start studying.
 
 I've been studying on my own for quite a while now, but I began to think that if I don't record any of it, it will end up as nothing more than self-satisfaction that no one else will ever know about. That's why I'm starting this blog.
 
