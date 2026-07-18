@@ -1,0 +1,70 @@
+baseURL = "https://joehwanghee.github.io/"
+locale = "ko-KR"
+title = "Joe's Blog"
+theme = "PaperMod"
+paginate = 10
+
+enableInlineShortcodes = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+pygmentsUseClasses = true
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  env = "production"
+  title = "Joe's Blog"
+  description = "Joe Hwang Hee's personal blog"
+  author = "JoeHwangHee"
+  DateFormat = "2006-01-02"
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
+
+  [params.homeInfoParams]
+    Title = "Hi there 👋"
+    Content = "Joe Hwang Hee의 개발 블로그입니다."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/JoeHwangHee"
+
+[[menu.main]]
+  name = "Archive"
+  url = "archives"
+  weight = 5
+
+[[menu.main]]
+  name = "Search"
+  url = "search"
+  weight = 10
+
+[[menu.main]]
+  name = "Tags"
+  url = "tags"
+  weight = 15
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"

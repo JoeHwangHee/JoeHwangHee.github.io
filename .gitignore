@@ -1,0 +1,8 @@
+/public/
+/resources/
+/.hugo_build.lock
+.DS_Store
+
+# fable-harness / loop-engineering local infra (not part of the site)
+/.harness-run/
+/.loop/
