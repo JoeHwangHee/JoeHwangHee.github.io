@@ -1,5 +1,6 @@
 baseURL = "https://joehwanghee.github.io/"
-locale = "ko-KR"
+defaultContentLanguage = "ko"
+defaultContentLanguageInSubdir = false
 title = "Joe's Blog"
 theme = "PaperMod"
 paginate = 10
@@ -18,10 +19,12 @@ pygmentsUseClasses = true
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
 [params]
   env = "production"
-  title = "Joe's Blog"
-  description = "Joe Hwang Hee's personal blog"
   author = "JoeHwangHee"
   DateFormat = "2006-01-02"
   defaultTheme = "auto"
@@ -42,29 +45,90 @@ pygmentsUseClasses = true
   showtoc = false
   tocopen = false
 
-  [params.homeInfoParams]
-    Title = "Hi there 👋"
-    Content = "Joe Hwang Hee의 개발 블로그입니다."
-
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/JoeHwangHee"
 
-[[menu.main]]
-  name = "Archive"
-  url = "archives"
-  weight = 5
+[languages.ko]
+  label = "한국어"
+  locale = "ko-KR"
+  weight = 1
+  title = "Joe's Blog"
 
-[[menu.main]]
-  name = "Search"
-  url = "search"
-  weight = 10
+  [languages.ko.params]
+    description = "Joe Hwang Hee의 개인 블로그입니다."
 
-[[menu.main]]
-  name = "Tags"
-  url = "tags"
-  weight = 15
+    [languages.ko.params.homeInfoParams]
+      Title = "Hi there 👋"
+      Content = "Joe Hwang Hee의 개발 블로그입니다."
 
-[taxonomies]
-  tag = "tags"
-  category = "categories"
+  [[languages.ko.menu.main]]
+    name = "아카이브"
+    url = "archives"
+    weight = 5
+
+  [[languages.ko.menu.main]]
+    name = "검색"
+    url = "search"
+    weight = 10
+
+  [[languages.ko.menu.main]]
+    name = "태그"
+    url = "tags"
+    weight = 15
+
+[languages.en]
+  label = "English"
+  locale = "en-US"
+  weight = 2
+  title = "Joe's Blog"
+
+  [languages.en.params]
+    description = "JoeHwangHee's personal blog"
+
+    [languages.en.params.homeInfoParams]
+      Title = "Hi there 👋"
+      Content = "This is JoeHwangHee's developer blog."
+
+  [[languages.en.menu.main]]
+    name = "Archive"
+    url = "archives"
+    weight = 5
+
+  [[languages.en.menu.main]]
+    name = "Search"
+    url = "search"
+    weight = 10
+
+  [[languages.en.menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 15
+
+[languages.ja]
+  label = "日本語"
+  locale = "ja-JP"
+  weight = 3
+  title = "Joe's Blog"
+
+  [languages.ja.params]
+    description = "JoeHwangHeeの個人ブログです。"
+
+    [languages.ja.params.homeInfoParams]
+      Title = "ようこそ 👋"
+      Content = "JoeHwangHeeの開発ブログです。"
+
+  [[languages.ja.menu.main]]
+    name = "アーカイブ"
+    url = "archives"
+    weight = 5
+
+  [[languages.ja.menu.main]]
+    name = "検索"
+    url = "search"
+    weight = 10
+
+  [[languages.ja.menu.main]]
+    name = "タグ"
+    url = "tags"
+    weight = 15
