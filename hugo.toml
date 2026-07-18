@@ -54,6 +54,7 @@ pygmentsUseClasses = true
   locale = "ko-KR"
   weight = 1
   title = "Joe's Blog"
+  contentDir = "content/ko"
 
   [languages.ko.params]
     description = "Joe Hwang Hee의 개인 블로그입니다."
@@ -82,6 +83,7 @@ pygmentsUseClasses = true
   locale = "en-US"
   weight = 2
   title = "Joe's Blog"
+  contentDir = "content/en"
 
   [languages.en.params]
     description = "JoeHwangHee's personal blog"
@@ -110,6 +112,7 @@ pygmentsUseClasses = true
   locale = "ja-JP"
   weight = 3
   title = "Joe's Blog"
+  contentDir = "content/ja"
 
   [languages.ja.params]
     description = "JoeHwangHeeの個人ブログです。"
