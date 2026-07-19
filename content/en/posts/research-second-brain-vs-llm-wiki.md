@@ -5,6 +5,12 @@ title = 'Second Brain vs LLM Wiki — A PKM Design Comparison Report for Develop
 tags = ['Second Brain']
 +++
 
+> **How this report was made and checked** (researched 2026-07-18 · supplemented 2026-07-19)
+> - This report was produced by an automated research process: gathering sources through web searches from multiple angles, reading and summarizing each source, and then adversarially cross-checking the claims extracted from those summaries.
+> - Verification targeted 45 "falsifiable claims" pulled from the sources; only 2 survived strongly (marked in the text as "2/3 support, treat with caution"). The 43 that were rejected were rejected mostly not because the sources were wrong, but because the claims had been over-generalized during extraction.
+> - The main basis for the statements in this text is therefore the per-source summaries; the verification results are reflected in the confidence hedges on individual sentences and in Section 7 (Received Wisdom That Was Rejected).
+> - The counter-example figures in Section 7 (citation omission 91.9%, LinkedIn 63% improvement, and so on) are secondary sources cited during verification; this article did not check them against the originals directly.
+
 ## 1. One-Line Conclusion
 
 Second Brain is a system designed around actionability and human-judgment-driven curation, premised on "what a human will use again in the future" [1][6][11], while an LLM Wiki is a markdown knowledge base designed around machine readability and LLM-delegated maintenance, premised on "what an agent will read and maintain" [4][7][12]; and the bottleneck that the collected failure cases all commonly point to — sustained re-engagement after collection — is the real axis of choice for developers: whether a human or an agent takes it on [3][10][15].
@@ -21,7 +27,7 @@ Based on the Forte Labs source material, Second Brain is an external digital rep
 
 Obsidian and Notion are mentioned as representative associated tools [5][7][10].
 
-**Where the material is thin**: The CODE (Capture-Organize-Distill-Express) acronym referenced in the question does not itself appear in the collected material; only the capture and distill elements are confirmed in [1]. Zettelkasten too is only mentioned in passing in [4] as "human-curated PARA/Zettelkasten," with no detailed material. Also, the collected material does not specify the publication dates of Forte's source texts.
+**Where the material is thin**: The CODE (Capture-Organize-Distill-Express) acronym referenced in the question does not itself appear in the collected material; only the capture and distill elements are confirmed in [1]. Zettelkasten too is only mentioned in passing in [4] as "human-curated PARA/Zettelkasten," with no detailed material. Also, the collected material does not specify the publication dates of Forte's source texts. (Supplement, 2026-07-19: On re-checking the [1] original, the CODE acronym does in fact exist — "CODE, which stands for Capture, Organize, Distill, and Express." So the "does not appear" above was a gap in the collected excerpt, not a gap in the source.)
 
 ### LLM Wiki (Andrej Karpathy, GitHub Gist)
 
