@@ -2,6 +2,7 @@
 date = '2026-07-18T21:00:00+09:00'
 draft = false
 title = 'Second Brain vs LLM Wiki — 開発者のためのPKM設計比較レポート'
+summary = "人間が再利用する前提のSecond Brainと、エージェントが読んで維持する前提のLLM Wikiを軸ごとに比較したリサーチレポート。共通のボトルネック「収集後の再関与」を誰が担うかが、開発者の実質的な選択軸だと整理する。"
 tags = ['Second Brain']
 +++
 

@@ -2,6 +2,7 @@
 date = '2026-07-18T20:37:00+09:00'
 draft = false
 title = 'A Learned Fool'
+summary = "Lately I build with AI every weekend and wonder whether my job will be replaced. AI is nearly omniscient — yet also a knowledgeable fool that burns tokens chasing answers it can never reach."
 +++
 
 *Written July 18, 2026, 20:37*

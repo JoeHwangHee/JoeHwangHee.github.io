@@ -2,6 +2,7 @@
 date = '2026-07-18T15:54:30+09:00'
 draft = false
 title = 'Welcome'
+summary = "Starting over as a web developer studying again in the AI era, I open this blog to keep a record. It holds not just tech, but reflections that return to the basics."
 +++
 
 I started my career as a web developer.

@@ -2,6 +2,7 @@
 date = '2026-07-18T21:00:00+09:00'
 draft = false
 title = 'Second Brain vs LLM Wiki — A PKM Design Comparison Report for Developers'
+summary = "A research report comparing Second Brain (built for a human to reuse) and the LLM Wiki (built for an agent to read and maintain), axis by axis. It argues the real choice for developers is who handles the shared bottleneck — re-engagement after capture."
 tags = ['Second Brain']
 +++
 

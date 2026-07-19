@@ -1,0 +1,65 @@
+/* ============================================================
+   Menu layout — keep the nav identical across languages.
+   PaperMod right-aligns #menu via `justify-content: space-between`
+   and lets .header-nav wrap, so different label widths per language
+   make the menu shift / wrap onto a different line. Pin the menu to
+   its own full-width row, left-aligned, in every language.
+   Also drop the theme's `overflow-x: auto` so the dropdown can escape.
+   ============================================================ */
+.header-nav .menu {
+    order: 5;
+    flex-basis: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: visible;
+    row-gap: 0.15rem;
+    margin-top: 0.1rem;
+}
+
+/* ============================================================
+   Dropdown submenu (e.g. 개발기 ▾ → Second Brain)
+   ============================================================ */
+.menu .has-submenu {
+    position: relative;
+}
+
+.submenu-caret {
+    font-size: 0.7em;
+    opacity: 0.7;
+}
+
+.menu .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0.25rem 0;
+    min-width: 150px;
+    list-style: none;
+    background: var(--theme);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+    z-index: 120;
+}
+
+.menu .has-submenu:hover > .submenu,
+.menu .has-submenu:focus-within > .submenu {
+    display: block;
+}
+
+.menu .submenu li {
+    display: block;
+}
+
+.menu .submenu a {
+    display: block;
+    padding: 0.35rem 1rem;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.menu .submenu a:hover {
+    background: var(--tertiary);
+}

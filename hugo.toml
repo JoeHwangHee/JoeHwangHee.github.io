@@ -35,7 +35,7 @@ pygmentsUseClasses = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
-  ShowWordCount = true
+  ShowWordCount = false
   ShowRssButtonInSectionTermList = true
   UseHugoToc = true
   disableSpecial1stPost = false
@@ -65,8 +65,15 @@ pygmentsUseClasses = true
       Content = "Joe Hwang Hee의 개발 블로그입니다."
 
   [[languages.ko.menu.main]]
-    name = "Second Brain 개발기"
-    url = "posts/second-brain"
+    name = "개발기"
+    identifier = "devlog"
+    url = "posts/dev"
+    weight = 1
+
+  [[languages.ko.menu.main]]
+    name = "Second Brain"
+    parent = "devlog"
+    url = "posts/dev/second-brain"
     weight = 1
 
   [[languages.ko.menu.main]]
@@ -109,8 +116,15 @@ pygmentsUseClasses = true
       Content = "This is JoeHwangHee's developer blog."
 
   [[languages.en.menu.main]]
-    name = "Second Brain Dev Log"
-    url = "posts/second-brain"
+    name = "Dev Log"
+    identifier = "devlog"
+    url = "posts/dev"
+    weight = 1
+
+  [[languages.en.menu.main]]
+    name = "Second Brain"
+    parent = "devlog"
+    url = "posts/dev/second-brain"
     weight = 1
 
   [[languages.en.menu.main]]
@@ -153,8 +167,15 @@ pygmentsUseClasses = true
       Content = "JoeHwangHeeの開発ブログです。"
 
   [[languages.ja.menu.main]]
-    name = "Second Brain 開発記"
-    url = "posts/second-brain"
+    name = "開発記"
+    identifier = "devlog"
+    url = "posts/dev"
+    weight = 1
+
+  [[languages.ja.menu.main]]
+    name = "Second Brain"
+    parent = "devlog"
+    url = "posts/dev/second-brain"
     weight = 1
 
   [[languages.ja.menu.main]]

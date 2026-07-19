@@ -2,6 +2,7 @@
 date = '2026-07-18T20:36:00+09:00'
 draft = false
 title = '세컨드 브레인과 LLM Wiki, 그리고 하이브리드'
+summary = "AI 시대에 주목받는 Second Brain과 Karpathy의 LLM Wiki의 개념·장단점을 짚고, 둘을 융합한 하이브리드 개인 지식 저장소를 직접 개발 중인 이야기. 파일시스템 기반 첫 시도의 한계를 반성하며 다음 버전을 만든다."
 tags = ['Second Brain']
 +++
 

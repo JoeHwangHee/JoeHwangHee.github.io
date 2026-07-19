@@ -2,6 +2,7 @@
 date = '2026-07-18T20:36:00+09:00'
 draft = false
 title = 'Second Brain, LLM Wiki, and the Hybrid'
+summary = "A look at Second Brain and Karpathy's LLM Wiki — their concepts and trade-offs — and my own attempt to build a hybrid personal knowledge store fusing the two. After a filesystem-based first try fell short, I'm building the next version."
 tags = ['Second Brain']
 +++
 
