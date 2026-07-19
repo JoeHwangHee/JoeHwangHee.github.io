@@ -86,7 +86,7 @@ Main is a headless process not directly exposed to the outside, the companion is
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif','fontSize':'14px','lineColor':'#94A3B8','primaryColor':'#EEF2FF','primaryBorderColor':'#6366F1','primaryTextColor':'#1E1B4B','clusterBkg':'#F8FAFC','clusterBorder':'#E2E8F0','edgeLabelBackground':'#FFFFFF','titleColor':'#0F172A'}}}%%
-flowchart LR
+flowchart TB
     A["Internet raw text / user input"] --> B["Companion outer layer<br/>chunking · subjective·objective classify · fact-check"]
     B --> C["Main inner layer<br/>security check · label routing"]
     C --> D["Core (subjective)"]

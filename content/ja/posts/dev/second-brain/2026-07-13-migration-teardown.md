@@ -34,7 +34,7 @@ tags = ['Second Brain']
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif','fontSize':'14px','lineColor':'#94A3B8','primaryColor':'#EEF2FF','primaryBorderColor':'#6366F1','primaryTextColor':'#1E1B4B','clusterBkg':'#F8FAFC','clusterBorder':'#E2E8F0','edgeLabelBackground':'#FFFFFF','titleColor':'#0F172A'}}}%%
-flowchart LR
+flowchart TB
   subgraph BEFORE["撤去前"]
     direction TB
     b1["移行パイプライン 8段階<br/>(リポジトリ分離 → 移行完了まで)"]

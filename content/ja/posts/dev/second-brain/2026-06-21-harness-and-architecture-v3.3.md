@@ -86,7 +86,7 @@ flowchart TB
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif','fontSize':'14px','lineColor':'#94A3B8','primaryColor':'#EEF2FF','primaryBorderColor':'#6366F1','primaryTextColor':'#1E1B4B','clusterBkg':'#F8FAFC','clusterBorder':'#E2E8F0','edgeLabelBackground':'#FFFFFF','titleColor':'#0F172A'}}}%%
-flowchart LR
+flowchart TB
     A["インターネット原文 / ユーザー入力"] --> B["コンパニオン外層<br/>チャンキング · 主観・客観分類 · ファクトチェック"]
     B --> C["メイン内層<br/>セキュリティ検問 · ラベルルーティング"]
     C --> D["コア（主観）"]

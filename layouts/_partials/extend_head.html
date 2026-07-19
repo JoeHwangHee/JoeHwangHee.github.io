@@ -1,8 +1,29 @@
-{{- /* Theme-aware Mermaid rendering. Loaded only on pages that contain a diagram. */ -}}
+{{- /* Theme-aware Mermaid rendering. Loaded only on pages that contain a diagram.
+       Node/shape colors are driven by CSS variables (below) so they adapt to
+       light/dark; the diagram chrome (lines, clusters, edge labels, sequence
+       actors) is driven by the JS theme config; both flip on the site theme. */ -}}
 {{- if or (.Params.mermaid) (and .RawContent (strings.Contains .RawContent "```mermaid")) }}
 <style>
-  :root { --mmd-bg: #ffffff; --mmd-border: #e5e9f0; }
-  html[data-theme="dark"] { --mmd-bg: #22272e; --mmd-border: #333b47; }
+  :root {
+    --mmd-bg: #ffffff; --mmd-border: #e5e9f0;
+    --mmd-canon-fill:#E0E7FF;   --mmd-canon-stroke:#6366F1;   --mmd-canon-text:#312E81;
+    --mmd-derived-fill:#CCFBF1; --mmd-derived-stroke:#14B8A6; --mmd-derived-text:#134E4A;
+    --mmd-proc-fill:#FEF3C7;    --mmd-proc-stroke:#F59E0B;    --mmd-proc-text:#78350F;
+    --mmd-ext-fill:#E0F2FE;     --mmd-ext-stroke:#0EA5E9;     --mmd-ext-text:#075985;
+    --mmd-good-fill:#DCFCE7;    --mmd-good-stroke:#22C55E;    --mmd-good-text:#14532D;
+    --mmd-bad-fill:#FFE4E6;     --mmd-bad-stroke:#F43F5E;     --mmd-bad-text:#881337;
+    --mmd-neutral-fill:#F1F5F9; --mmd-neutral-stroke:#64748B; --mmd-neutral-text:#0F172A;
+  }
+  html[data-theme="dark"] {
+    --mmd-bg: #22272e; --mmd-border: #333b47;
+    --mmd-canon-fill:#282a5e;   --mmd-canon-stroke:#818CF8;   --mmd-canon-text:#C7D2FE;
+    --mmd-derived-fill:#0e3b38; --mmd-derived-stroke:#2DD4BF; --mmd-derived-text:#99F6E4;
+    --mmd-proc-fill:#432f11;    --mmd-proc-stroke:#FBBF24;    --mmd-proc-text:#FDE68A;
+    --mmd-ext-fill:#0c374d;     --mmd-ext-stroke:#38BDF8;     --mmd-ext-text:#BAE6FD;
+    --mmd-good-fill:#123524;    --mmd-good-stroke:#4ADE80;    --mmd-good-text:#BBF7D0;
+    --mmd-bad-fill:#4c1626;     --mmd-bad-stroke:#FB7185;     --mmd-bad-text:#FECDD3;
+    --mmd-neutral-fill:#1e293b; --mmd-neutral-stroke:#94A3B8; --mmd-neutral-text:#E2E8F0;
+  }
   pre.mermaid {
     margin: 1.5rem 0;
     padding: 1rem 1.25rem;
@@ -15,13 +36,19 @@
   }
   pre.mermaid svg { max-width: 100%; height: auto; }
   pre.mermaid:not([data-processed]) { visibility: hidden; height: 0; margin: 0; padding: 0; border: 0; }
+
+  {{- range slice "canon" "derived" "proc" "ext" "good" "bad" "neutral" }}
+  pre.mermaid .{{ . }} > * { fill: var(--mmd-{{ . }}-fill) !important; stroke: var(--mmd-{{ . }}-stroke) !important; }
+  pre.mermaid .{{ . }} .nodeLabel, pre.mermaid .{{ . }} span, pre.mermaid .{{ . }} p, pre.mermaid .{{ . }} tspan { fill: var(--mmd-{{ . }}-text) !important; color: var(--mmd-{{ . }}-text) !important; }
+  {{- end }}
 </style>
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
   const FONT = "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif";
+  const SIZE = '16px';
   const LIGHT = { theme: 'base', themeVariables: {
-    fontFamily: FONT, fontSize: '14px', textColor: '#1E1B4B', titleColor: '#0F172A',
+    fontFamily: FONT, fontSize: SIZE, textColor: '#1E1B4B', titleColor: '#0F172A',
     lineColor: '#94A3B8', primaryColor: '#EEF2FF', primaryBorderColor: '#6366F1', primaryTextColor: '#1E1B4B',
     clusterBkg: '#F8FAFC', clusterBorder: '#E2E8F0', edgeLabelBackground: '#FFFFFF',
     actorBkg: '#EEF2FF', actorBorder: '#6366F1', actorTextColor: '#1E1B4B', actorLineColor: '#CBD5E1',
@@ -31,7 +58,7 @@
     loopTextColor: '#0F172A', activationBkgColor: '#C7D2FE'
   }};
   const DARK = { theme: 'base', themeVariables: {
-    fontFamily: FONT, fontSize: '14px', textColor: '#E2E8F0', titleColor: '#F1F5F9',
+    fontFamily: FONT, fontSize: SIZE, textColor: '#E2E8F0', titleColor: '#F1F5F9',
     lineColor: '#64748B', primaryColor: '#1E293B', primaryBorderColor: '#818CF8', primaryTextColor: '#E2E8F0',
     clusterBkg: '#1a2029', clusterBorder: '#334155', edgeLabelBackground: '#232a36',
     actorBkg: '#1E293B', actorBorder: '#818CF8', actorTextColor: '#E2E8F0', actorLineColor: '#475569',

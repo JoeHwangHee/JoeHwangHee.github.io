@@ -34,7 +34,7 @@ tags = ['Second Brain']
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif','fontSize':'14px','lineColor':'#94A3B8','primaryColor':'#EEF2FF','primaryBorderColor':'#6366F1','primaryTextColor':'#1E1B4B','clusterBkg':'#F8FAFC','clusterBorder':'#E2E8F0','edgeLabelBackground':'#FFFFFF','titleColor':'#0F172A'}}}%%
-flowchart LR
+flowchart TB
   subgraph BEFORE["철거 전"]
     direction TB
     b1["이관 파이프라인 8단계<br/>(저장소 분리 → 이관 완료까지)"]

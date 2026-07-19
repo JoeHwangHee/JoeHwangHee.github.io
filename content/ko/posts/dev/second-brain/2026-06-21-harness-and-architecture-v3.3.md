@@ -86,7 +86,7 @@ flowchart TB
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif','fontSize':'14px','lineColor':'#94A3B8','primaryColor':'#EEF2FF','primaryBorderColor':'#6366F1','primaryTextColor':'#1E1B4B','clusterBkg':'#F8FAFC','clusterBorder':'#E2E8F0','edgeLabelBackground':'#FFFFFF','titleColor':'#0F172A'}}}%%
-flowchart LR
+flowchart TB
     A["인터넷 원문 / 사용자 입력"] --> B["동반 바깥켜<br/>청킹 · 주관·객관 분류 · 팩트체크"]
     B --> C["메인 안켜<br/>보안 검문 · 라벨 라우팅"]
     C --> D["코어(주관)"]

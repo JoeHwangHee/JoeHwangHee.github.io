@@ -1,6 +1,10 @@
-{{- /* Strip any baked-in %%{init ...}%% directive so theme is driven centrally
-       (see extend_head.html), then emit the diagram for client-side rendering. */ -}}
-{{- $src := replaceRE `(?s)\s*%%\{init:.*?\}%%\s*` "" .Inner -}}
+{{- /* Strip baked-in %%{init}%% directives and classDef color definitions so that
+       diagram theming (light/dark), sizing and semantic colors are all driven
+       centrally by the site (see layouts/_partials/extend_head.html).
+       The `class <node> <name>` assignments are kept, so nodes still carry their
+       semantic class (canon/derived/proc/ext/good/bad/neutral) for CSS to color. */ -}}
+{{- $s := replaceRE `(?s)\s*%%\{init:.*?\}%%\s*` "" .Inner -}}
+{{- $s = replaceRE `(?m)^[ \t]*classDef[ \t]+.*$` "" $s -}}
 <pre class="mermaid">
-{{- $src | htmlEscape | safeHTML }}
+{{- $s | htmlEscape | safeHTML }}
 </pre>
