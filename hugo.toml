@@ -26,6 +26,7 @@ pygmentsUseClasses = true
 [params]
   env = "production"
   author = "JoeHwangHee"
+  mainSections = ["posts"]
   DateFormat = "2006-01-02"
   defaultTheme = "auto"
   disableThemeToggle = false
@@ -64,6 +65,21 @@ pygmentsUseClasses = true
       Content = "Joe Hwang Hee의 개발 블로그입니다."
 
   [[languages.ko.menu.main]]
+    name = "Second Brain 개발기"
+    url = "posts/second-brain"
+    weight = 1
+
+  [[languages.ko.menu.main]]
+    name = "일상/잡담"
+    url = "posts/daily"
+    weight = 2
+
+  [[languages.ko.menu.main]]
+    name = "지식/공부"
+    url = "posts/knowledge"
+    weight = 3
+
+  [[languages.ko.menu.main]]
     name = "아카이브"
     url = "archives"
     weight = 5
@@ -93,6 +109,21 @@ pygmentsUseClasses = true
       Content = "This is JoeHwangHee's developer blog."
 
   [[languages.en.menu.main]]
+    name = "Second Brain Dev Log"
+    url = "posts/second-brain"
+    weight = 1
+
+  [[languages.en.menu.main]]
+    name = "Daily & Notes"
+    url = "posts/daily"
+    weight = 2
+
+  [[languages.en.menu.main]]
+    name = "Knowledge & Study"
+    url = "posts/knowledge"
+    weight = 3
+
+  [[languages.en.menu.main]]
     name = "Archive"
     url = "archives"
     weight = 5
@@ -120,6 +151,21 @@ pygmentsUseClasses = true
     [languages.ja.params.homeInfoParams]
       Title = "ようこそ 👋"
       Content = "JoeHwangHeeの開発ブログです。"
+
+  [[languages.ja.menu.main]]
+    name = "Second Brain 開発記"
+    url = "posts/second-brain"
+    weight = 1
+
+  [[languages.ja.menu.main]]
+    name = "日常・雑談"
+    url = "posts/daily"
+    weight = 2
+
+  [[languages.ja.menu.main]]
+    name = "知識・学習"
+    url = "posts/knowledge"
+    weight = 3
 
   [[languages.ja.menu.main]]
     name = "アーカイブ"
