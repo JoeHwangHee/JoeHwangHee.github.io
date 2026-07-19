@@ -1,3 +1,6 @@
+{{- /* Strip any baked-in %%{init ...}%% directive so theme is driven centrally
+       (see extend_head.html), then emit the diagram for client-side rendering. */ -}}
+{{- $src := replaceRE `(?s)\s*%%\{init:.*?\}%%\s*` "" .Inner -}}
 <pre class="mermaid">
-{{- .Inner | htmlEscape | safeHTML }}
+{{- $src | htmlEscape | safeHTML }}
 </pre>

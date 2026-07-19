@@ -1,7 +1,62 @@
-{{- /* Load Mermaid only on pages that actually contain a mermaid diagram. */ -}}
+{{- /* Theme-aware Mermaid rendering. Loaded only on pages that contain a diagram. */ -}}
 {{- if or (.Params.mermaid) (and .RawContent (strings.Contains .RawContent "```mermaid")) }}
+<style>
+  :root { --mmd-bg: #ffffff; --mmd-border: #e5e9f0; }
+  html[data-theme="dark"] { --mmd-bg: #22272e; --mmd-border: #333b47; }
+  pre.mermaid {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--mmd-bg);
+    border: 1px solid var(--mmd-border);
+    border-radius: 12px;
+    text-align: center;
+    overflow-x: auto;
+    line-height: normal;
+  }
+  pre.mermaid svg { max-width: 100%; height: auto; }
+  pre.mermaid:not([data-processed]) { visibility: hidden; height: 0; margin: 0; padding: 0; border: 0; }
+</style>
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true, securityLevel: 'loose' });
+
+  const FONT = "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif";
+  const LIGHT = { theme: 'base', themeVariables: {
+    fontFamily: FONT, fontSize: '14px', textColor: '#1E1B4B', titleColor: '#0F172A',
+    lineColor: '#94A3B8', primaryColor: '#EEF2FF', primaryBorderColor: '#6366F1', primaryTextColor: '#1E1B4B',
+    clusterBkg: '#F8FAFC', clusterBorder: '#E2E8F0', edgeLabelBackground: '#FFFFFF',
+    actorBkg: '#EEF2FF', actorBorder: '#6366F1', actorTextColor: '#1E1B4B', actorLineColor: '#CBD5E1',
+    signalColor: '#475569', signalTextColor: '#0F172A',
+    labelBoxBkgColor: '#FEF3C7', labelBoxBorderColor: '#F59E0B', labelTextColor: '#78350F',
+    noteBkgColor: '#DCFCE7', noteBorderColor: '#22C55E', noteTextColor: '#14532D',
+    loopTextColor: '#0F172A', activationBkgColor: '#C7D2FE'
+  }};
+  const DARK = { theme: 'base', themeVariables: {
+    fontFamily: FONT, fontSize: '14px', textColor: '#E2E8F0', titleColor: '#F1F5F9',
+    lineColor: '#64748B', primaryColor: '#1E293B', primaryBorderColor: '#818CF8', primaryTextColor: '#E2E8F0',
+    clusterBkg: '#1a2029', clusterBorder: '#334155', edgeLabelBackground: '#232a36',
+    actorBkg: '#1E293B', actorBorder: '#818CF8', actorTextColor: '#E2E8F0', actorLineColor: '#475569',
+    signalColor: '#94A3B8', signalTextColor: '#E2E8F0',
+    labelBoxBkgColor: '#78350F', labelBoxBorderColor: '#F59E0B', labelTextColor: '#FEF3C7',
+    noteBkgColor: '#14532D', noteBorderColor: '#22C55E', noteTextColor: '#DCFCE7',
+    loopTextColor: '#E2E8F0', activationBkgColor: '#334155'
+  }};
+
+  const nodes = Array.from(document.querySelectorAll('pre.mermaid'));
+  nodes.forEach(el => { el.dataset.src = el.textContent; });
+
+  let busy = false;
+  async function render() {
+    if (busy) return;
+    busy = true;
+    const dark = document.documentElement.dataset.theme === 'dark';
+    mermaid.initialize(Object.assign({ startOnLoad: false, securityLevel: 'loose' }, dark ? DARK : LIGHT));
+    nodes.forEach(el => { el.removeAttribute('data-processed'); el.textContent = el.dataset.src; });
+    try { await mermaid.run({ nodes }); } catch (e) { console.error(e); }
+    busy = false;
+  }
+
+  render();
+  new MutationObserver(m => { if (m.some(x => x.attributeName === 'data-theme')) render(); })
+    .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 </script>
 {{- end }}
