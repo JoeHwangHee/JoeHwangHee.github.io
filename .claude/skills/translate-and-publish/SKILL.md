@@ -62,6 +62,10 @@ content:
   - Never leave a reference pointing outside `static/` — it won't resolve on the deployed
     site.
 - Don't touch front matter except what's already there (date/draft/title).
+- Mermaid diagrams (```mermaid blocks): the site renders and themes them centrally, so keep
+  the source lean — **no `%%{init}%%` directive, no `classDef` colors**; tag nodes with the
+  shared semantic classes and prefer vertical (`flowchart TB`) layout. Read
+  `references/mermaid-diagrams.md` before writing or editing any diagram.
 
 ### 3. Independent style review — gate before translating
 
@@ -218,3 +222,7 @@ curl -s -o /dev/null -w "%{http_code}\n" https://joehwanghee.github.io/ja/posts/
 - Forgetting `draft = false` in the new language files (post silently won't build/show).
 - Leaving an image reference pointing outside `static/` (breaks on the deployed site).
 - Forcing a table onto narrative prose that doesn't actually have tabular structure.
+- Baking `%%{init}%%` themes or `classDef` colors into a ```mermaid block — breaks dark mode
+  and duplicates styling the site already owns. See `references/mermaid-diagrams.md`.
+- Using a wide `flowchart LR` where a chain would read better top-down (`TB`) — it shrinks
+  to unreadable text on narrow screens.
