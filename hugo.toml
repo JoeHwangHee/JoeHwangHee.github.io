@@ -83,10 +83,16 @@ pygmentsUseClasses = true
     weight = 2
 
   [[languages.ko.menu.main]]
-    name = "NVIDIA 해커톤 2026"
+    name = "해커톤 본선"
     parent = "devlog"
-    url = "posts/dev/nvidia-hackathon"
+    url = "posts/dev/nvidia-hackathon-finals"
     weight = 3
+
+  [[languages.ko.menu.main]]
+    name = "해커톤 예선"
+    parent = "devlog"
+    url = "posts/dev/nvidia-hackathon-prelim"
+    weight = 4
 
   [[languages.ko.menu.main]]
     name = "일상/잡담"
@@ -146,10 +152,16 @@ pygmentsUseClasses = true
     weight = 2
 
   [[languages.en.menu.main]]
-    name = "NVIDIA Hackathon 2026"
+    name = "Hackathon Finals"
     parent = "devlog"
-    url = "posts/dev/nvidia-hackathon"
+    url = "posts/dev/nvidia-hackathon-finals"
     weight = 3
+
+  [[languages.en.menu.main]]
+    name = "Hackathon Prelims"
+    parent = "devlog"
+    url = "posts/dev/nvidia-hackathon-prelim"
+    weight = 4
 
   [[languages.en.menu.main]]
     name = "Daily & Notes"
@@ -209,10 +221,16 @@ pygmentsUseClasses = true
     weight = 2
 
   [[languages.ja.menu.main]]
-    name = "NVIDIA ハッカソン 2026"
+    name = "ハッカソン本選"
     parent = "devlog"
-    url = "posts/dev/nvidia-hackathon"
+    url = "posts/dev/nvidia-hackathon-finals"
     weight = 3
+
+  [[languages.ja.menu.main]]
+    name = "ハッカソン予選"
+    parent = "devlog"
+    url = "posts/dev/nvidia-hackathon-prelim"
+    weight = 4
 
   [[languages.ja.menu.main]]
     name = "日常・雑談"
