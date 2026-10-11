@@ -77,6 +77,18 @@ pygmentsUseClasses = true
     weight = 1
 
   [[languages.ko.menu.main]]
+    name = "HIA"
+    parent = "devlog"
+    url = "posts/dev/hia"
+    weight = 2
+
+  [[languages.ko.menu.main]]
+    name = "NVIDIA 해커톤 2026"
+    parent = "devlog"
+    url = "posts/dev/nvidia-hackathon"
+    weight = 3
+
+  [[languages.ko.menu.main]]
     name = "일상/잡담"
     url = "posts/daily"
     weight = 2
@@ -128,6 +140,18 @@ pygmentsUseClasses = true
     weight = 1
 
   [[languages.en.menu.main]]
+    name = "HIA"
+    parent = "devlog"
+    url = "posts/dev/hia"
+    weight = 2
+
+  [[languages.en.menu.main]]
+    name = "NVIDIA Hackathon 2026"
+    parent = "devlog"
+    url = "posts/dev/nvidia-hackathon"
+    weight = 3
+
+  [[languages.en.menu.main]]
     name = "Daily & Notes"
     url = "posts/daily"
     weight = 2
@@ -177,6 +201,18 @@ pygmentsUseClasses = true
     parent = "devlog"
     url = "posts/dev/second-brain"
     weight = 1
+
+  [[languages.ja.menu.main]]
+    name = "HIA"
+    parent = "devlog"
+    url = "posts/dev/hia"
+    weight = 2
+
+  [[languages.ja.menu.main]]
+    name = "NVIDIA ハッカソン 2026"
+    parent = "devlog"
+    url = "posts/dev/nvidia-hackathon"
+    weight = 3
 
   [[languages.ja.menu.main]]
     name = "日常・雑談"
